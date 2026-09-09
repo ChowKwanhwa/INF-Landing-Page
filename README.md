@@ -1,30 +1,29 @@
-# Copy header section
+# Infinite Alliance — Landing Page
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Marketing site for Infinite Alliance, a Web3 investment and incubation firm.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/liuyuelan12-gmailcoms-projects/v0-inf)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/FN9S8jLr7st)
+**Live:** https://infinitealliances.com
 
-## Overview
+## Stack
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+- Next.js 15 (App Router, static export)
+- React 19 + TypeScript
+- Tailwind CSS + shadcn/ui
+- Hosted on Cloudflare Pages
 
-## Deployment
+## Local development
 
-Your project is live at:
+```bash
+pnpm install
+pnpm dev          # http://localhost:3000
+```
 
-**[https://vercel.com/liuyuelan12-gmailcoms-projects/v0-inf](https://vercel.com/liuyuelan12-gmailcoms-projects/v0-inf)**
+## Build & deploy
 
-## Build your app
+```bash
+pnpm build                          # emits static site to ./out
+npx wrangler pages deploy out --project-name=inf-landing
+```
 
-Continue building your app on:
-
-**[https://v0.dev/chat/projects/FN9S8jLr7st](https://v0.dev/chat/projects/FN9S8jLr7st)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+`next.config.mjs` sets `output: 'export'`, so `pnpm build` produces a fully
+static site in `out/` with no server runtime required.
